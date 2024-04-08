@@ -100,22 +100,6 @@ public class AmazonLoginTest {
         // Close the browser
         driver.quit();
     }
-    public static void handleCaptcha(WebDriver driver) {
-        try {
-            // Find the CAPTCHA input field and attempt to input text
-            WebElement captchaInput = driver.findElement(By.id("captchacharacters"));
-            captchaInput.sendKeys("SampleText"); // Attempt to input text into the CAPTCHA field
-            // Wait for some time to see if CAPTCHA validation error occurs
-            Thread.sleep(3000);
-            // Check if CAPTCHA validation error occurs
-            if (driver.getPageSource().contains("CAPTCHA validation failed")) {
-                System.out.println("Error: CAPTCHA validation failed");
-            } else {
-                System.out.println("CAPTCHA validation successful");
-            }
-        } catch (Exception e) {
-            System.out.println("Error: Unable to find CAPTCHA input field");
-        }
-    }
+
 
 }
